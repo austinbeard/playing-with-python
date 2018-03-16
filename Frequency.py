@@ -1,4 +1,4 @@
-import random
+from random import randint
 
 #Initialize both lists used in program
 l = []
@@ -13,7 +13,7 @@ freqnum = int(input("What is the smallest number you want to see in the frequenc
 
 #Loop to generate list of random numbers
 for num in range(tries):
-  x = random.randint(MIN, MAX)
+  x = randint(MIN, MAX)
   #Put each number into the list
   l.append(x)
 
@@ -27,7 +27,7 @@ for y in range(min(l), max(l)+1):
     #Put each number with frequency in list
     lFreq.append(pair)
 
-print("These are the numbers that generated:")
+print("\n\n\nThese are the numbers that generated:")
 #Tell the user if the list is empty
 if not lFreq:
   print("Nothing occured {} or more times!".format(freqnum))
