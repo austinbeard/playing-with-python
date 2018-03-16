@@ -15,7 +15,7 @@ freqnum = int(input("What is the smallest number you want to see in the frequenc
 #Loop to generate list of random numbers
 for num in range(tries):
   x = randint(MIN, MAX)
-  
+
   #Put each number into the list
   l.append(x)
 
