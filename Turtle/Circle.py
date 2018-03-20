@@ -14,21 +14,19 @@ def jump(x, y):
   
 colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
 t = turtle.Turtle()
+turtle.bgcolor('black')
 t.speed(0)
 
+# 1st ring
 jump(0, 285)
-ring(360, 5, 1)
+ring(360, 5, 1.00)
 
+# 2nd ring
 jump(0, 185)
-
 ring(450, 2.6, 0.80)
 
+# 3rd ring
 jump(0, 85)
-
-ring(500, 1.2, 0.75)
-
-t.penup()
-t.goto(0, 85)
-t.pendown()
+ring(450, 1.2, 0.80)
 
 turtle.mainloop()
