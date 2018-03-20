@@ -1,36 +1,34 @@
 import turtle
 
+def ring(rangeNum, move, turn):
+  for x in range(rangeNum):
+    t.pencolor(colors[x%6])
+    t.circle(50)
+    t.forward(move)
+    t.right(turn)
+
+def jump(x, y):
+  t.penup()
+  t.goto(x, y)
+  t.pendown()
+  
 colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
-t = turtle.Pen()
-t.penup()
+t = turtle.Turtle()
 t.speed(0)
-t.goto(0, 285)
-t.pendown()
-turtle.bgcolor('black')
-for x in range(360):
-	t.pencolor(colors[x%6])
-	t.circle(50)
-	t.forward(5)
-	t.right(1)
 
-t.penup()
-t.goto(0, 185)
-t.pendown()
+jump(0, 285)
+ring(360, 5, 1)
 
-for y in range(450):
-	t.pencolor(colors[y%6])
-	t.circle(50)
-	t.forward(2.6)
-	t.right(.80)
+jump(0, 185)
+
+ring(450, 2.6, 0.80)
+
+jump(0, 85)
+
+ring(500, 1.2, 0.75)
 
 t.penup()
 t.goto(0, 85)
 t.pendown()
-# Fix this ring still overlaping on bottom
-for z in range(540):
-	t.pencolor(colors[z%6])
-	t.circle(50)
-	t.forward(1.3)
-	t.right(.75)
 
 turtle.mainloop()
