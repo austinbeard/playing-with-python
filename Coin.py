@@ -1,4 +1,5 @@
 import random
+import time
 
 class Coin:
   sides = ['heads', 'tails']
@@ -17,9 +18,11 @@ dime = Coin('dime')
 penny = Coin('penny')
 quarter = Coin('quarter')
 nickel = Coin('nickel')
+
 for x in range(10):
   dime.displayInfo()
   penny.displayInfo()
   quarter.displayInfo()
   nickel.displayInfo()
-  print("\n\n")
+  print("\n")
+  time.sleep(2)
