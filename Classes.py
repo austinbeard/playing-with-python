@@ -1,5 +1,5 @@
-import random
-import time
+from random import choice, randint
+from time import sleep
 
 class Coin:
   sides = ['heads', 'tails']
@@ -8,7 +8,7 @@ class Coin:
     self.name = name
     
   def flip(self):
-    side = random.choice(Coin.sides)
+    side = choice(Coin.sides)
     return side
   
   def displayInfo(self):
@@ -21,7 +21,7 @@ class Die:
     self.numSides = numSides
     
   def roll(self):
-    side = random.randint(1, self.numSides)
+    side = randint(1, self.numSides)
     return side
     
   def displayInfo(self):
@@ -43,4 +43,4 @@ for x in range(10):
   d6.displayInfo()
   d20.displayInfo()
   print("\n")
-  time.sleep(2)
+  sleep(2)
