@@ -45,36 +45,56 @@ nickel = Coin('Nickel')
 d6 = Die(6)
 d20 = Die(20)
 
-for x in range(100):
+runs = 100
+allHeadCount = 0
+allTailCount = 0
+lowNumCount = 0
+highNumCount = 0
+equalNumCount = 0
+
+for x in range(runs):
   dime.displayInfo()
   penny.displayInfo()
   quarter.displayInfo()
   nickel.displayInfo()
   d6.displayInfo()
   d20.displayInfo()
-  print('\n')
-  
   
   if dime.sideUp == 'Heads' and penny.sideUp == 'Heads' and quarter.sideUp == 'Heads' and nickel.sideUp == 'Heads':
     print("All heads!")
+    allHeadCount += 1
     
   elif dime.sideUp == 'Tails' and penny.sideUp == 'Tails' and quarter.sideUp == 'Tails' and nickel.sideUp == 'Tails':
     print("All tails!")
+    allTailCount += 1
     
   elif d6.sideUp == 6 and d20.sideUp == 20:
     print("Max numbers on both dice!")
+    highNumCount += 1
     
   elif d6.sideUp == 1 and d20.sideUp == 1:
     print("Minimum numbers on both dice!")
+    lowNumCount += 1
     
   elif d6.sideUp == d20.sideUp:
     print("Both dice are equal!")
+    equalNumCount += 1
     
   elif dime.sideUp == 'Heads' and penny.sideUp == 'Heads' and quarter.sideUp == 'Heads' and nickel.sideUp == 'Heads' and d6.sideUp == 6 and d20.sideUp == 20:
     print("All heads and max numbers on dice!")
+    allHeadCount += 1
+    highNumCount += 1
     
   elif dime.sideUp == 'Tails' and penny.sideUp == 'Tails' and quarter.sideUp == 'Tails' and nickel.sideUp == 'Tails' and d6.sideUp == 1 and d20.sideUp == 1:
     print("All tails and minimum numbers on dice!")
-    
+    allTailCount += 1
+    lowNumCount += 1
+  
   print('\n')
-  sleep(2)
+  
+print("Final count over {} runs:".format(runs))
+print("All Heads: {}".format(allHeadCount))
+print("All Tails: {}".format(allTailCount))
+print("Lowest number: {}".format(lowNumCount))
+print("Highest number: {}".format(highNumCount))
+print("Equal number: {}".format(equalNumCount))
